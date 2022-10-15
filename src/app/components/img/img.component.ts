@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-img',
@@ -8,8 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ImgComponent implements OnInit {
 
   @Input() img: string = '';
+  @Input() defaultTextImg: string = '';
+
+  @Output() loaded = new EventEmitter<string>();
+
   defaultImg: string = 'https://180dc.org/wp-content/uploads/2016/08/default-profile.png';
-  defaultTextImg: string = 'Inserte una imagen';
+  // defaultTextImg: string = 'Inserte una imagen';
   errorImg: boolean = false;
   imageLoaded: boolean = false;
 
@@ -34,6 +38,7 @@ export class ImgComponent implements OnInit {
       this.errorImg = false;
     }else if (this.imageLoaded && this.errorImg == false) {
       this.defaultTextImg = 'Imagen cargada exitosamente';
+      this.loaded.emit(this.img);
       console.log('Imagen cargada: ' + this.imageLoaded);
       console.log('Hay un error: ' + this.errorImg);
     }
