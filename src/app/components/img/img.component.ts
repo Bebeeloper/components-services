@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-img',
   templateUrl: './img.component.html',
   styleUrls: ['./img.component.css']
 })
-export class ImgComponent implements OnInit {
+export class ImgComponent implements OnInit, OnChanges, AfterViewInit {
 
   @Input() img: string = '';
   @Input() defaultTextImg: string = '';
@@ -17,9 +17,31 @@ export class ImgComponent implements OnInit {
   errorImg: boolean = false;
   imageLoaded: boolean = false;
 
-  constructor() { }
+  constructor() {
+    // El constructor solo corre una vez
+    // before render
+    // No se pueden correr cosas de manera asyncrona
+  }
+
+  // Triggers
+  ngOnChanges(): void {
+    // before and during render
+    // changes inputs -- time
+      console.log('Parent image: ' + this.img);
+      if (this.img == '') {
+        this.defaultTextImg = 'Carga una imagen';
+      }
+
+  }
 
   ngOnInit(): void {
+    // before render
+    // async - fetch - once time
+  }
+
+  ngAfterViewInit(): void {
+    // after render
+    // handler children
   }
 
   imageError(){
