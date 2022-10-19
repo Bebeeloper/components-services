@@ -15,6 +15,14 @@ app-img {
   padding: 1rem;
 }
 
+.product-info-container .product-info h2{
+  font-size: 2rem;
+}
+
+.product-info-container .product-info p{
+  font-size: 1.2rem;
+}
+
 .product-info-container .product-btn-container {
   width: 50%;
   padding: 1rem;
@@ -24,6 +32,7 @@ app-img {
 }
 
 .product-info-container .product-btn-container button{
+  width: 70%;
   padding: 0.5rem;
   background-color: rgb(98, 0, 255);
   border: none;
@@ -33,15 +42,14 @@ app-img {
 }
 
 .product-info-container .product-btn-container button i{
-  margin-right: 1rem;
-  padding: 0.2rem;
+  margin-right: 3rem;
 }
 
-@media screen and (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 426px){
 
   app-img {
     width: 23.5rem;
-    height: 14rem;
+    height: 13.5rem;
     display: flex;
     overflow: hidden;
     border-radius: 1.5rem;
@@ -54,9 +62,33 @@ app-img {
   .product-info-container .product-btn-container button{
     width: 100%;
   }
+}
 
-  .product-info-container .product-btn-container button i{
-    /* margin-right: 01rem; */
+@media (min-width: 1025px) {
+  app-img {
+    width: 23.5rem;
+    height: 13.5rem;
+    display: flex;
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+
+  .product-info-container {
+    width: 100%;
+  }
+
+  .product-info-container .product-info {
+    width: 50%;
+    padding: 1rem;
+  }
+
+  .product-info-container .product-btn-container{
+    width: 50%;
     padding: 0;
+    background-color: black;
+  }
+
+  .product-info-container .product-btn-container button{
+    width: 100%;
   }
 }
