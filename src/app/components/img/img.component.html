@@ -1,5 +1,5 @@
-<img (load)="imgLoaded()" (error)="imageError()" *ngIf="img; else elseImg" [src]="img" alt="profile pic" width="250" height="300">
+<img class="imagencita" (load)="imgLoaded()" (error)="imageError()" *ngIf="img; else elseImg" [src]="img" alt="profile pic">
 <ng-template #elseImg>
-  <img [src]="defaultImg" alt="default profile pic" width="250" height="300">
+  <img class="imagencita" [src]="defaultImg" alt="default profile pic">
 </ng-template>
-<p>{{defaultTextImg}}</p>
+<!-- <p>{{defaultTextImg}}</p> -->

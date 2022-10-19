@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-img',
   templateUrl: './img.component.html',
   styleUrls: ['./img.component.css']
 })
-export class ImgComponent implements OnInit, OnChanges, AfterViewInit {
+export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 
   @Input() img: string = '';
   @Input() defaultTextImg: string = '';
@@ -42,6 +42,10 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit {
   ngAfterViewInit(): void {
     // after render
     // handler children
+  }
+
+  ngOnDestroy(): void {
+    // delete component
   }
 
   imageError(){

@@ -1,3 +1,12 @@
-<img [src]="product.image" alt="image product" width="350" height="300">
-<h2>{{product.price}}</h2>
-<p>{{product.name}}</p>
+<!-- <img [src]="product.image" alt="image product" width="350" height="300"> -->
+<app-img [img]="product.image"></app-img>
+<div class="product-info-container">
+  <div class="product-info">
+    <h2 class="product-price">{{product.price}}</h2>
+    <p class="product-name">{{product.name}}</p>
+  </div>
+  <div class="product-btn-container">
+    <button><i class="fa fa-shopping-cart"></i>Add to cart</button>
+  </div>
+</div>
+
