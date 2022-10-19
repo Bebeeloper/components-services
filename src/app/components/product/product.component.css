@@ -37,11 +37,26 @@ app-img {
   padding: 0.2rem;
 }
 
-/* .product-price {
-  margin-top: 1rem;
-  margin-left: 1rem;
-}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
 
-.product-name {
-  margin-left: 1rem;
-} */
+  app-img {
+    width: 23.5rem;
+    height: 14rem;
+    display: flex;
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+
+  .product-info-container .product-btn-container{
+    padding: 0;
+  }
+
+  .product-info-container .product-btn-container button{
+    width: 100%;
+  }
+
+  .product-info-container .product-btn-container button i{
+    /* margin-right: 01rem; */
+    padding: 0;
+  }
+}

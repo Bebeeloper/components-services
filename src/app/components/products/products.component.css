@@ -11,19 +11,25 @@
 }
 
 /* tablets */
-@media screen and (min-width: 40em) and (max-width: 63.9em) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
   .products--grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.5rem;
   }
+
+  .products--grid app-product{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* web */
-@media screen and (min-width: 64em) {
+/* @media screen and (min-width: 1025px) {
   .products--grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1.5rem;
   }
-}
+} */
